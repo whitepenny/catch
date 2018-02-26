@@ -28,7 +28,6 @@ $donate_link = get_field( 'global_donate_link', 'option' );
               <a href="<?php echo get_home_url(); ?>" class="header_logo">
                 <span class="screenreader"><?php echo $main_title; ?></span>
               </a>
-              <span class="header_tagline"><?php echo $tagline; ?></span>
             </div>
             <div class="fs-cell fs-sm-half fs-md-half fs-lg-9">
               <nav class="header_nav main_nav">
