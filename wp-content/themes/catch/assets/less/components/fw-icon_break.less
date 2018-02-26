@@ -1,0 +1,79 @@
+.icon_break {
+  background: @gray_5;
+  padding: 40px 0;
+
+  @media @min_md {
+    padding: 70px 0;
+  }
+
+  @media @min_lg {
+    padding: 100px 0;
+  }
+
+  @media @min_xl {
+    padding: 120px 0;
+  }
+}
+
+.icon_break_icon {
+  margin: 0 0 20px;
+  text-align: center;
+
+  @media @min_md {
+    margin: 0;
+  }
+
+  .icon {
+    font-size: 7px;
+
+    @media @min_md {
+      font-size: 8px;
+    }
+
+    @media @min_lg {
+      font-size: 10px;
+    }
+  }
+}
+
+.icon_break_container {
+
+  @media @min_md {
+    border-left: 2px solid @gray_10;
+    padding-left: 40px;
+  }
+
+  @media @min_lg {
+    padding-left: 40px;
+  }
+
+  @media @min_xl {
+    padding-left: 60px;
+  }
+}
+
+.icon_break_content {
+  .freight;
+
+  color: @gray_70;
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+
+  @media @min_md {
+    font-size: 30px;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  @media @min_lg {
+    font-size: 36px;
+  }
+
+  strong {
+    .freight_italic;
+
+    color: @sun;
+  }
+}

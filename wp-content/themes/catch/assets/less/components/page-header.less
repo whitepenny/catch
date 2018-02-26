@@ -1,0 +1,336 @@
+.page_header {
+  width: 100%;
+
+  background: @gray_5;
+
+  padding: 60px 0 30px;
+
+  @media @min_md {
+    padding: 40px 0 30px;
+  }
+
+  @media @min_lg {
+    padding: 60px 0 50px;
+  }
+}
+
+//
+
+.image_header {
+  .relative;
+
+  background: @black;
+  color: @white;
+  padding: 150px 0 40px;
+
+  @media @min_md {
+    padding: 225px 0 40px;
+  }
+
+  @media @min_lg {
+    padding: 275px 0 60px;
+  }
+
+  @media @min_xl {
+    padding: 325px 0 60px;
+  }
+
+  &:after {
+    .absolute;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    background: fade(@black, 30);
+    content: '';
+  }
+
+  .page_title {
+    color: @white;
+  }
+
+  .page_intro {
+    color: @white;
+  }
+}
+
+//
+
+.icon_header {
+
+  .page_header_cell {
+
+    @media @min_md {
+      padding-right: 20px;
+    }
+  }
+}
+
+//
+
+.story_header {
+  .relative;
+
+  background: @black;
+  color: @white;
+  padding: 0;
+
+  @media @min_md {
+    padding: 200px 0 40px;
+  }
+
+  @media @min_lg {
+    padding: 80px 0;
+  }
+
+  @media @min_xl {
+    padding: 100px 0;
+  }
+
+  .page_title {
+    color: @white;
+  }
+
+  .page_intro {
+    border: 1px solid @white;
+    border-width: 1px 0;
+    color: @white;
+    margin: 15px 0 0;
+    padding: 5px 0;
+  }
+
+  .page_header_cell {
+    .relative;
+
+    background: @gray_80;
+    padding: 40px 0;
+
+    @media @min_md {
+      padding: 50px 20px 50px 40px;
+    }
+
+    @media @min_lg {
+      padding: 60px 20px 60px 50px;
+    }
+
+    @media @min_lg {
+      padding: 70px 20px 70px 60px;
+    }
+
+    &:before,
+    &:after {
+      .absolute;
+
+      width: 100vw;
+
+      top: 0;
+      bottom: 0;
+
+      background: @gray_80;
+      content: '';
+    }
+
+    &:before {
+      right: 100%;
+
+      @media @min_md {
+        display: none;
+      }
+    }
+
+    &:after {
+      left: 100%;
+    }
+  }
+
+  .page_header_background {
+    padding-bottom: 56.25%;
+
+    @media @min_md {
+      .absolute;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      padding: 0;
+    }
+  }
+
+  &.theme_sun {
+
+    .page_header_cell {
+
+      &,
+      &:after {
+        background: @sun;
+      }
+    }
+  }
+
+  &.theme_mint {
+
+    .page_header_cell {
+
+      &,
+      &:after {
+        background: @mint;
+      }
+    }
+  }
+
+  &.theme_sky {
+
+    .page_header_cell {
+
+      &,
+      &:after {
+        background: @sky;
+      }
+    }
+  }
+}
+
+//
+
+.page_header_row {
+  .relative;
+
+  z-index: 2;
+}
+
+.page_title {
+  .freight_bold;
+
+  color: @gray_70;
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0;
+
+  @media @min_md {
+    font-size: 50px;
+  }
+
+  @media @min_lg {
+    font-size: 60px;
+  }
+
+  @media @min_xl {
+    font-size: 70px;
+  }
+
+  br {
+
+    @media @max_md {
+      display: none;
+    }
+  }
+}
+
+.page_subtitle {
+  .avenir_heavy;
+
+  color: @gray_70;
+  font-size: 18px;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+
+  @media @min_lg {
+    font-size: 20px;
+  }
+}
+
+.page_intro.page_content {
+
+  p {
+    margin-top: 10px;
+  }
+}
+
+
+// Breadcrumb
+
+.breadcrumb {
+  font-size: 13px;
+  line-height: 30px;
+  margin: 0 0 20px;
+
+  @media @max_lg {
+    display: none;
+  }
+
+  > span {
+    .inline_block;
+
+    font-size: 10px;
+    margin: 0 8px;
+
+    a,
+    > span {
+      .avenir_medium;
+
+      color: @black;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    a {
+
+      &:hover {
+        color: @sun;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+
+      &:before {
+        &:extend(.icon:before);
+        &:extend(.icon.circle_house:before);
+
+        margin: 0 10px 0 0;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+// icon
+
+.page_icon {
+  .relative;
+
+  @media @max_md {
+    display: none;
+  }
+
+  @media @min_md {
+    border-left: 2px solid @sun;
+    text-align: right;
+  }
+
+  .icon {
+
+    &:before {
+      .block;
+      .absolute;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      margin: auto;
+
+      @media @min_lg {
+        left: 0;
+      }
+    }
+  }
+}

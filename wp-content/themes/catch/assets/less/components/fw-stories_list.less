@@ -1,0 +1,187 @@
+.stories_list {
+  background: @white;
+  padding: 30px 0;
+
+  @media @min_md {
+    padding: 50px 0;
+  }
+
+  &.services_slim {
+
+    @media @min_md {
+      padding: 30px 0;
+    }
+  }
+}
+
+// Items
+
+.stories_list_item {
+  .block;
+  .contain;
+  .relative;
+
+  margin-bottom: 15px;
+
+  @media @min_md {
+    margin-bottom: 20px;
+  }
+
+  @media @min_lg {
+    margin-bottom: 30px;
+  }
+
+  @media @min_xl {
+    margin-bottom: 40px;
+  }
+
+  @media @min_md {
+
+    &:nth-child(odd) {
+
+      .stories_list_image {
+        .left;
+      }
+    }
+
+    &:nth-child(even) {
+
+      .stories_list_image {
+        .right;
+      }
+    }
+  }
+
+  &.theme_sun {
+    background: @sun;
+  }
+
+  &.theme_mint {
+    background: @mint;
+  }
+
+  &.theme_sky {
+    background: @sky;
+  }
+
+  &.theme_sun,
+  &.theme_mint,
+  &.theme_sky {
+
+    .stories_list_title {
+      color: @white;
+    }
+
+    .stories_list_label {
+      color: @white;
+    }
+  }
+}
+
+.stories_list_link {
+  .block;
+  .contain;
+}
+
+.stories_list_image {
+  .block;
+
+  width: 100%;
+
+  @media @min_md {
+    width: 50%;
+  }
+}
+
+.stories_list_content {
+  .contain;
+  .relative;
+
+  padding: 30px 100px 30px 20px;
+
+  @media @min_sm {
+    padding: 30px 120px 30px 20px;
+  }
+
+  @media @min_md {
+    padding: 50px 40px 20px;
+  }
+
+  @media @min_lg {
+    padding: 60px 60px 20px;
+  }
+
+  @media @min_xl {
+    padding: 80px 80px 20px;
+  }
+
+  .icon {
+    .block;
+
+    font-size: 6px;
+    transition: transform 0.25s ease;
+
+    @media @min_sm {
+      font-size: 8px;
+    }
+
+    @media @max_md {
+      .absolute;
+
+      top: 30px;
+      right: 30px;
+    }
+
+    @media @min_md {
+      font-size: 8px;
+      margin: 10px 0 0;
+    }
+
+    @media @min_xl {
+      font-size: 10px;
+      margin: 15px 0 0;
+    }
+
+    a:hover & {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.stories_list_title {
+  .freight_bold;
+
+  color: @gray_70;
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0;
+
+  @media @min_sm {
+    font-size: 34px;
+  }
+
+  @media @min_md {
+    font-size: 30px;
+  }
+
+  @media @min_lg {
+    font-size: 40px;
+  }
+
+  @media @min_xl {
+    font-size: 46px;
+  }
+}
+
+.stories_list_label {
+  .avenir;
+
+  color: @gray_60;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 5px 0 0;
+
+  @media @min_lg {
+    font-size: 20px;
+  }
+}

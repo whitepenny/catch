@@ -1,0 +1,42 @@
+.page_break {
+  background: @white;
+  padding: 40px 0;
+  text-align: center;
+
+  @media @min_md {
+    padding: 70px 0;
+  }
+
+  @media @min_lg {
+    padding: 100px 0;
+  }
+
+  @media @min_xl {
+    padding: 120px 0;
+  }
+}
+
+.page_break_content {
+  .freight;
+
+  color: @gray_70;
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+
+  @media @min_md {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  @media @min_lg {
+    font-size: 36px;
+  }
+
+  strong {
+    .freight_italic;
+
+    color: @sun;
+  }
+}

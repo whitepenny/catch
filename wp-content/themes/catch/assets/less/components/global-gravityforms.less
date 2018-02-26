@@ -1,0 +1,298 @@
+.input_text() {
+  .transition_link;
+  .block;
+
+  width: 100%;
+
+  background: @gray_5;
+  border: 2px solid @gray_5;
+  font-size: 16px;
+  padding: 14px 15px 12px;
+
+  @media @min_md {
+    border-width: 3px;
+    padding: 15px 17px 13px;
+  }
+
+  @media @min_lg {
+    border-width: 3px;
+    font-size: 18px;
+    padding: 20px 22px 18px;
+  }
+
+  @media @min_xl {
+    border-width: 3px;
+    padding: 25px 27px 23px;
+  }
+
+  &:focus {
+    border-color: @sun;
+  }
+}
+
+//
+
+.gravityform_block {
+  margin: 30px 0;
+
+  @media @min_md {
+    margin: 50px 0;
+  }
+}
+
+.gform_anchor {
+
+  &:before {
+    .block;
+
+    width: 1px;
+
+    content: '';
+    pointer-events: none;
+
+    @media @min_md {
+      height: 60px;
+      margin: -60px 0 0;
+    }
+
+    @media @min_lg {
+      height: 80px;
+      margin: -80px 0 0;
+    }
+  }
+}
+
+.gform_anchor {
+  .block;
+
+  margin: 0;
+}
+
+.gravityform { }
+
+.gform_confirmation_message {
+  // color: @black;
+  // font-size: 16px;
+  // margin: 10px 0;
+  // padding: 10px 0;
+  //
+  // @media @min_lg {
+  //   font-size: 18px;
+  // }
+
+  &:extend(.page_content all);
+}
+
+.gravityform_container {
+
+  form {
+    padding: 0;
+
+    .content_link;
+  }
+
+  h2 {
+    color: @black;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    .relative;
+
+    width: 100%;
+
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+
+    @media @min_lg {
+      margin: 0 0 30px;
+    }
+
+    .name_first,
+    .name_last {
+      .block;
+
+      margin: 0;
+    }
+
+    .name_last {
+      margin: 15px 0 0;
+
+      @media @min_md {
+        margin: 0;
+      }
+    }
+
+    &.gform_hidden {
+      margin: 0;
+    }
+  }
+
+  .gform_footer {
+    // text-align: center;
+  }
+
+  label {
+    .screenreader;
+  }
+
+  .ginput_complex {
+
+    label {
+      .avenir;
+
+      color: @gray_60;
+      font-size: 12px;
+      margin: 5px 0;
+      text-transform: uppercase;
+    }
+  }
+
+  input[type='text'],
+  input[type='tel'],
+  input[type='email'],
+  input[type='url'],
+  textarea,
+  select {
+    .input_text();
+  }
+
+  select {
+    appearance: none;
+    border-radius: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAABGdBTUEAALGPC/xhBQAAAFxJREFUKBVjYGBgWALE/wlgkBqiAR9Q5X0gxmUoSA6khiRgBVT9B4jRDQWJgeTIAvVAXegGgsTIBsxAnUeBGGYoiA0SowgoAHV/hGIQm2TAgqbjAZCfBRUDsUkGABlZJFWx7vXfAAAAAElFTkSuQmCC');
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+
+  input[type='submit'] {
+    .transition_link;
+    .button_sun;
+    .button_hover_black;
+
+    cursor: pointer;
+  }
+
+  .gfield_html {
+    clear: both;
+  }
+
+  .gfield {
+
+    &:after {
+      width: 100%;
+
+      content: '';
+      display: table;
+    }
+
+    @media @min_md {
+      clear: both;
+
+      &.split_left,
+      &.split_right,
+      .ginput_complex > span {
+        width: 49%;
+
+        clear: none;
+      }
+
+      &.split_left,
+      .ginput_complex > span:nth-child(odd) {
+        .left;
+
+        clear: left;
+      }
+
+      &.split_right,
+      .ginput_complex > span:nth-child(even) {
+        .right;
+      }
+    }
+  }
+
+  .gform_validation_container {
+    .screenreader;
+  }
+
+  .validation_error {
+    width: 100%;
+
+    background: @red;
+    color: @white;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    padding: 10px 15px;
+  }
+
+  .validation_message {
+    .avenir;
+
+    color: @red;
+    clear: both;
+    font-size: 13px;
+    padding: 5px 0 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .gfield_error {
+
+    input[type='text'],
+    input[type='tel'],
+    input[type='email'],
+    input[type='url'],
+    textarea {
+      border-color: @red;
+      color: @red;
+    }
+
+    .validation_message {
+      color: @red;
+    }
+  }
+
+}
+
+// //
+//
+// .form_block {
+//   margin: 20px 0;
+//
+//   @media @min_lg {
+//     margin: 40px 0;
+//   }
+// }
+//
+// .form_block_title {
+//   color: @sun;
+//   font-weight: 600;
+//   font-size: 24px;
+//   line-height: 1.4;
+//   margin: 0 0 15px;
+// }
+//
+// .form_block_content {
+//
+//   p {
+//     font-size: 16px;
+//     margin: 15px 0;
+//   }
+// }
+//
+// .form_block_form {
+//
+//   @media @min_xl {
+//     width: 80%;
+//   }
+// }

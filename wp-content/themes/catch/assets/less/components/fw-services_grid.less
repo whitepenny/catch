@@ -1,0 +1,190 @@
+.services_grid {
+  background: @white;
+  padding: 30px 0;
+
+  @media @min_md {
+    padding: 50px 0;
+  }
+
+  &.services_slim {
+
+    @media @min_md {
+      padding: 30px 0;
+    }
+  }
+}
+
+// Items
+
+.services_grid_item {
+  .block;
+  .contain;
+  .relative;
+
+  border: 5px solid @gray_10;
+  margin-bottom: 10px;
+
+  @media @min_md {
+    border-width: 8px;
+    margin-bottom: 15px;
+  }
+
+  @media @min_lg {
+    border-width: 10px;
+    margin-bottom: 20px;
+  }
+
+  @media @min_xl {
+    margin-bottom: 25px;
+  }
+
+  &:after {
+    .absolute;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: @gray_80;
+    content: '';
+    opacity: 0.8;
+    transition: opacity 0.2s linear;
+  }
+
+  &:hover {
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &.theme_sun {
+
+    &:after {
+      background: @sun;
+    }
+  }
+
+  &.theme_mint {
+
+    &:after {
+      background: @mint;
+    }
+  }
+
+  &.theme_sky {
+
+    &:after {
+      background: @cyan;
+    }
+  }
+}
+
+.services_grid_image {
+  .relative;
+  .block;
+
+  width: 100%;
+
+  z-index: 0;
+}
+
+.services_grid_content {
+  .absolute;
+
+  z-index: 2;
+
+  top: 50%;
+
+  margin: 0 20px;
+  padding: 0 80px 0 0;
+  transform: translateY(-50%);
+
+  @media @min_sm {
+    margin: 0 80px 0 40px;
+    padding: 0 100px 0 0;
+  }
+
+  @media @min_md {
+    margin: 0 20px;
+    padding: 0 80px 0 0;
+  }
+
+  @media @min_lg {
+    margin: 0 80px 0 40px;
+    padding: 0 120px 0 0;
+  }
+
+  @media @min_xl {
+    margin: 0 120px 0 60px;
+    padding: 0 120px 0 0;
+  }
+
+  .icon {
+    .absolute;
+
+    top: 0;
+    right: 0;
+
+    font-size: 6px;
+    transition: transform 0.25s ease;
+
+    @media @min_sm {
+      font-size: 8px;
+    }
+
+    @media @min_md {
+      font-size: 8px;
+    }
+
+    @media @min_lg {
+      font-size: 10px;
+    }
+
+    a:hover & {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.services_grid_title {
+  .freight_bold;
+
+  color: @white;
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0;
+
+  @media @min_sm {
+    font-size: 34px;
+  }
+
+  @media @min_md {
+    font-size: 30px;
+  }
+
+  @media @min_lg {
+    font-size: 40px;
+  }
+
+  @media @min_xl {
+    font-size: 46px;
+  }
+}
+
+.services_grid_label {
+  .avenir;
+
+  color: @white;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+
+  @media @min_lg {
+    font-size: 20px;
+  }
+}

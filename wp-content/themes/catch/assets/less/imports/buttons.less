@@ -1,0 +1,42 @@
+.button_base(@bg:@white, @color:@black) {
+  .avenir;
+  .inline_block;
+  .transition_link;
+
+  background: @bg;
+  border-radius: 3px;
+  color: @color;
+  font-size: 16px;
+  line-height: 1;
+  padding: 15px 25px;
+
+  @media @min_md {
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 20px 35px;
+  }
+}
+
+.button_sun() {
+  .button_base(@sun);
+}
+
+.button_white() {
+  .button_base(@white, @sun);
+}
+
+.button_hover_black() {
+
+  &:hover {
+    background-color: @black;
+    color: @white;
+  }
+}
+
+.button_hover_white() {
+
+  &:hover {
+    background-color: @white;
+    color: @black;
+  }
+}

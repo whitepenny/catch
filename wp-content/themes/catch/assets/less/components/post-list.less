@@ -1,0 +1,206 @@
+.post_grid {
+  padding: 10px 0;
+
+  @media @min_lg {
+    padding: 20px 0;
+  }
+
+  @media @min_xl {
+    padding: 30px 0;
+  }
+}
+
+.post_item {
+  background: @white;
+  margin-bottom: 10px;
+
+  @media @min_md {
+    margin-bottom: 15px;
+  }
+
+  @media @min_lg {
+    margin-bottom: 20px;
+  }
+
+  @media @min_xl {
+    margin-bottom: 25px;
+  }
+
+  .theme_gray & {
+    background: @gray_5;
+  }
+}
+
+.post_item_image {
+  .block;
+
+  @media @min_sm @and_max_md {
+    .right;
+
+    width: 33%;
+
+    margin: 20px 20px 20px 30px;
+  }
+}
+
+.post_item_container {
+  padding: 20px;
+
+  @media @min_xl {
+    padding: 30px;
+  }
+}
+
+.post_item {
+
+  .post_item_date {
+    margin: 0 0 10px;
+  }
+}
+
+.post_item_title {
+  .freight_black;
+
+  color: @gray_70;
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 10px 0;
+
+  @media @min_md {
+    font-size: 24px;
+  }
+
+  @media @min_lg {
+    font-size: 26px;
+  }
+
+  a {
+    color: @gray_70;
+
+    &:hover {
+      color: @mint;
+    }
+  }
+}
+
+.post_item_content {
+  .avenir;
+
+  color: @gray_60;
+  font-size: 16px;
+  margin: 10px 0 0;
+
+  @media @min_lg {
+    font-size: 18px;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    .avenir_heavy;
+
+    border-bottom: 1px solid @mint;
+    color: @mint;
+
+    &:hover {
+      border-color: @black;
+      color: @black;
+    }
+  }
+}
+
+// Pagination
+
+.pagination {
+  margin: 20px 0 0;
+  text-align: center;
+
+  @media @min_md {
+    margin: 30px 0 0;
+  }
+
+  @media @min_lg {
+    margin: 40px 0 0;
+  }
+
+  @media @min_xl {
+    margin: 50px 0 0;
+  }
+
+  .page-numbers {
+    .inline_block;
+
+    background: @gray_10;
+    border-radius: 4px;
+    color: @gray_80;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0 6px;
+    padding: 14px 18px 13px;
+
+    @media @max_md {
+      display: none;
+
+      &.prev,
+      &.next {
+        .inline_block;
+      }
+    }
+
+    @media @min_lg {
+      font-size: 18px;
+    }
+
+    &.prev,
+    &.next {
+      padding-left: 25px;
+      padding-right: 25px;
+
+      .icon {
+        .inline_block;
+
+        margin: 0;
+        transform: translateY(-4px);
+        vertical-align: baseline;
+      }
+    }
+
+    &.prev {
+      margin-right: 20px;
+
+      @media @min_lg {
+        margin-right: 30px;
+      }
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    &.next {
+      margin-left: 20px;
+
+      @media @min_lg {
+        margin-left: 30px;
+      }
+
+      .icon {
+        margin-left: 10px;
+      }
+    }
+
+    &.current {
+      background: @mint;
+    }
+  }
+
+  a.page-numbers {
+
+    &:hover {
+      background: @gray_80;
+      color: @white;
+    }
+  }
+}

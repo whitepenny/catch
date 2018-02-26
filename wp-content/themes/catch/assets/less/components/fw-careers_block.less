@@ -1,0 +1,158 @@
+.careers_block {
+  .relative;
+
+  background: @gray_80;
+  padding: 60px 0;
+
+  @media @min_md {
+    padding: 100px 0;
+  }
+
+  @media @min_lg {
+    padding: 140px 0;
+  }
+
+  @media @min_xl {
+    padding: 180px 0;
+  }
+
+  &:after {
+    .absolute;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    background: @gray_80;
+    content: '';
+    opacity: 0.8;
+  }
+}
+
+.careers_block_row {
+  .relative;
+
+  z-index: 2;
+}
+
+.careers_block_header {
+  .contain;
+}
+
+.careers_block_label {
+  .freight_italic;
+  .inline_block;
+  .relative;
+
+  background: fade(@white, 10);
+  color: @mint;
+  font-size: 20px;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  margin: 0 0 20px;
+  padding: 8px 10px 5px;
+
+  @media @min_lg {
+    font-size: 26px;
+    padding: 10px 14px 7px;
+  }
+
+  &:after {
+    .absolute;
+
+    width: 100vw;
+    height: 2px;
+
+    top: 0;
+    bottom: 0;
+    left: 100%;
+
+    background: @mint;
+    content: '';
+    margin: auto 0 auto 10px;
+
+    @media @min_lg {
+      margin: auto 0 auto 20px;
+    }
+
+    @media @min_xl {
+      margin: auto 0 auto 30px;
+    }
+  }
+}
+
+.careers_block_content {
+  .freight;
+
+  color: @white;
+  font-size: 30px;
+  line-height: 1.3;
+  margin: 10px 0;
+
+  @media @min_md {
+    font-size: 34px;
+  }
+
+  @media @min_lg {
+    font-size: 40px;
+    margin: 20px 0;
+  }
+
+  @media @min_xl {
+    font-size: 46px;
+  }
+
+  strong {
+    .freight_italic;
+
+    color: @sun;
+  }
+}
+
+.careers_block_button {
+  .button_sun;
+  .button_hover_white;
+
+  margin-top: 20px;
+
+  @media @min_lg {
+    margin-top: 30px;
+  }
+}
+
+.careers_block_diagram {
+  padding: 20px 0;
+  text-align: center;
+
+  @media @max_md {
+    display: none;
+  }
+
+  @media @min_md {
+    text-align: right;
+  }
+
+  @media @min_xl {
+    text-align: center;
+  }
+
+  .icon {
+
+    @media @min_md {
+      font-size: 6px;
+    }
+
+    @media @min_lg {
+      font-size: 8px;
+    }
+
+    @media @min_xl {
+      font-size: 10px;
+    }
+  }
+}

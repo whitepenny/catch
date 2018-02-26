@@ -1,0 +1,42 @@
+.dp-shortcodes-popup { position: fixed; top: 100px; width: 100%; text-align: center; z-index: 9999; }
+	.dp-shortcodes-popup .inner { display: inline-block; text-align: left; padding: 10px; background-color: #fff; 
+		max-width: 450px; box-shadow: 0px 0px 10px #ccc;}
+	.dp-shortcodes-popup .title { font-size: 140%; font-weight: bold; margin-bottom: 10px; }
+	.dp-shortcodes-popup .label { font-weight: bold; margin-bottom: 5px; }
+	.dp-shortcodes-popup .dp-shortcode-cancel { float: left; }
+	.dp-shortcodes-popup .dp-shortcode-insert { float: right; }
+	.dp-shortcodes-popup textarea { width: 400px; height: 180px; }
+	.dp-shortcodes-popup .button-holder { margin-top: 10px; }
+	.dp-shortcodes-popup select { width: 100%; margin-bottom: 15px; }
+	.dp-shortcodes-popup input { width: 100%; margin-bottom: 15px;  }
+	
+.dp-shortcode-item {}
+	.dp-shortcode-item table { width: 100%; }
+	.dp-shortcode-item h3 { margin: 0; padding: 10px 5px; border-bottom: 1px solid #eee; }
+	.dp-shortcode-item .inside { margin: 0; padding: 5px; }
+	.dp-shortcode-item .right-column { padding-left: 10px; }
+	.dp-shortcode-item .left-column { width: 100px; }
+	.dp-shortcode-item .mb10 { margin-bottom: 10px; }
+	
+.dps-item-icon img { vertical-align: middle; width: 32px; height: 32px; } 
+
+.dp-shortcodes-edit .nav-tab-wrapper { margin-bottom: 20px; }
+.dps-edit { text-decoration: none; float: left; margin-right: 5px; }
+.dps-delete { text-decoration: none; float: right;  }
+.dps-attributes { padding: 10px; border: 1px dashed #000;  }
+.dps-attr-title { font-weight:bold; }
+.dps-attr-new { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+.dps-attributes table { margin-bottom: 10px; }
+.dps-doesnt-exist { font-weight: normal; color: red; font-size: 70%; }
+.dps-not-exist { font-style: italic; text-align: center; }
+.dps-hint { display: none; }
+	
+.dp-shortcodes-edit td { vertical-align: middle; }
+	.dps-hint-popup { padding: 10px; position: fixed; z-index: 10; max-width: 300px;  display: none;
+		-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; background-color: #fff; border: 1px solid #000; }
+		
+	.dps-hint-popup ul { padding-left: 20px; margin-left: 10px; }
+	.dps-hint-popup ul li { list-style-type: disc; }	
+	
+.dps-sort-item { padding: 10px; border: 1px solid #aaa; margin-bottom: 10px; background-color: #fff; cursor: move; }
+.dp-shortcodes-edit textarea { width: 60%; height: 150px; }
