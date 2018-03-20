@@ -34,7 +34,7 @@ if ( ! empty( $items ) ) :
       <p><?php echo $intro; ?></p>
     </div>
     <?php endif; ?>
-    <a href="<?php echo $link; ?>" class="programs_list_link">Learn More</a>
+    <a href="<?php echo $link; ?>" class="programs_list_link">Program Summary</a>
   </div>
   <?php
     endforeach;

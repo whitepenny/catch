@@ -28,8 +28,7 @@ if ( have_posts() ) :
       <div class="fs-row fs-sm-align-center page_content contact_row">
         <div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half">
           <div class="responsive_image">
-            <img src="<?php echo CATCH_THEME_URI; ?>/public/images/large_map.svg" alt="" class="has_svg">
-            <img src="<?php echo CATCH_THEME_URI; ?>/public/images/large_map.png" alt="" class="no_svg">
+            <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.8437187212994!2d-75.16799038461836!3d39.944885279422806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c624ae8c7933%3A0xf90498d24217f375!2sCatch+Inc+Community+Services!5e0!3m2!1sen!2sus!4v1521550696020" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
         <div class="fs-cell fs-xs-full fs-sm-half fs-md-half fs-lg-half contact_info">

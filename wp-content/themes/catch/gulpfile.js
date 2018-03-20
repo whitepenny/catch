@@ -14,6 +14,7 @@ var sourcemaps     = require('gulp-sourcemaps');
 var svgSprite      = require('gulp-svg-sprites');
 var svg2png        = require('gulp-svg2png');
 var uglify         = require('gulp-uglify');
+var livereload     = require('gulp-livereload');
 
 var lessImportNPM  = require('less-plugin-npm-import');
 
@@ -60,7 +61,8 @@ gulp.task('styles', function() {
       inline: ['none']
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css'))
+    .pipe(livereload());
 });
 
 // JS
@@ -172,6 +174,7 @@ gulp.task('default', sequence(
 ));
 
 gulp.task('watch', ['default'], function() {
+  livereload.listen();
   gulp.watch('assets/less/**/*.less', { cwd: './' }, ['styles']);
   gulp.watch('assets/js/**/*.js', { cwd: './' }, ['scripts']);
   gulp.watch('assets/icons/*.svg', { cwd: './' }, ['sprites']);
