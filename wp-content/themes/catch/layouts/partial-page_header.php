@@ -21,9 +21,15 @@ endif;
     </div>
     <?php endif; ?>
     <div class="fs-cell fs-md-4 fs-lg-8 page_header_cell">
+      <?php if(! empty ($page_title)): ?>
       <h1 class="page_title">
         <?php echo catch_format_content( $page_title ); ?>
       </h1>
+      <?php else: ?>
+      <h1 class="page_title">
+        Sorry
+      </h1>
+      <?php endif; ?>
       <?php if ( ! empty( $page_subtitle ) ) : ?>
       <span class="page_subtitle"><?php echo $page_subtitle; ?></span>
       <?php endif; ?>
