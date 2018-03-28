@@ -3,6 +3,28 @@
     "title": "Team Content",
     "fields": [
         {
+            "key": "field_5abbbc22abc69",
+            "label": "Type",
+            "name": "type",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "team_type",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
+        },
+        {
             "key": "field_5a6d44a41a46b",
             "label": "Image",
             "name": "bio_image",
@@ -81,5 +103,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517875584
+    "modified": 1522258038
 }

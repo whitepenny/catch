@@ -15,6 +15,20 @@ if ( empty( $page_title ) ) {
   $page_title = get_the_title( $page_id );
 }
 
+// Custom team pages
+if ( $cpt == 'team' && is_tax( 'team_type' ) ) {
+  $term_slug = get_query_var( 'team_type' );
+
+  if ( ! empty( $term_slug ) ) {
+    $term = get_term_by( 'slug', $term_slug, 'team_type' );
+
+    if ( ! is_wp_error( $term ) ) {
+      $page_title = $term->name;
+      $page_intro = '';
+    }
+  }
+}
+
 catch_template_part( 'layouts/partial-page_header', array(
   'page_title' => $page_title,
   'page_subtitle' => $page_subtitle,
@@ -23,25 +37,3 @@ catch_template_part( 'layouts/partial-page_header', array(
   'page_image' => $page_image,
   'page_icon' => $page_icon,
 ) );
-
-/*
-?>
-<div class="page_header">
-  <div class="fs-row page_header_row">
-    <div class="fs-cell fs-lg-9 fs-xl-8">
-      <?php if ( empty( $page_image ) ) : ?>
-      <?php get_template_part( 'layouts/breadcrumb' ); ?>
-      <?php endif; ?>
-      <h1 class="page_title">
-        <?php echo catch_format_content( $page_title ); ?>
-      </h1>
-      <?php if ( ! empty( $page_intro ) ) : ?>
-      <div class="page_content page_intro">
-        <p><?php echo $page_intro; ?></p>
-      </div>
-      <?php endif; ?>
-    </div>
-  </div>
-</div>
-<?php
-*/

@@ -1,11 +1,9 @@
 <?php
 $slides = get_field( 'slides' );
-
 ?>
 <div class="fs-row home_slider_container">
   <div class="fs-cell">
     <div class="home_slider js-home_slider owl-carousel">
-
       <?php
         foreach ( $slides as $slide ) :
       ?>

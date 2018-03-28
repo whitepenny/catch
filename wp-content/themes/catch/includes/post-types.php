@@ -56,6 +56,22 @@ function catch_register_post_types() {
   ) );
 
   // Team
+  register_taxonomy( 'team_type', 'team', array(
+    'labels'            => array(
+      'name'            => 'Types',
+      'add_new_item'    => 'Add New Type',
+      'new_item_name'   => 'New Type',
+    ),
+    'show_ui'           => true,
+    'show_tagcloud'     => false,
+    'show_admin_column' => true,
+    'hierarchical'      => true,
+    'rewrite'           => array(
+      'slug'            => $slugs['team'] . '/type',
+      'with_front'      => false,
+    ),
+  ) );
+
   register_post_type( 'team', array(
     'labels'              => array(
       'name'              => 'Team',
@@ -85,18 +101,7 @@ function catch_register_post_types() {
     'query_var'           => true,
   ) );
 
-  register_taxonomy( 'team_type', 'team', array(
-    'labels'            => array(
-      'name'            => 'Types',
-      'add_new_item'    => 'Add New Type',
-      'new_item_name'   => 'New Type',
-    ),
-    'show_ui'           => false,
-    'show_tagcloud'     => false,
-    'show_admin_column' => true,
-    'hierarchical'      => true,
-    'rewrite'           => false,
-  ) );
+  register_taxonomy_for_object_type( 'team_type', 'team' );
 
   // Callouts
   register_post_type( 'callout', array(
@@ -124,8 +129,6 @@ function catch_register_post_types() {
     'rewrite'             => false,
     'query_var'           => true,
   ) );
-
-  register_taxonomy_for_object_type( 'team_type', 'team' );
 
   $old_slugs = get_option( 'catch_post_type_slugs' );
   if ( empty( $old_slugs ) || (

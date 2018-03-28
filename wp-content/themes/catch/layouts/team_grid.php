@@ -1,11 +1,27 @@
 <?php
 
-$items = get_posts( array(
+$args = array(
   'post_type' => 'team',
   'numberposts' => -1,
   'orderby' => 'menu_order',
   'order' => 'ASC',
-) );
+);
+
+if ( is_tax( 'team_type' ) ) {
+  $term = get_query_var( 'team_type' );
+
+  if ( ! empty( $term ) ) {
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'team_type',
+        'field' => 'slug',
+        'terms' => $term,
+      )
+    );
+  }
+}
+
+$items = get_posts( $args );
 
 if ( ! empty( $items ) ) :
 ?>
