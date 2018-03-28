@@ -74,13 +74,22 @@ function catch_sub_navigation( $depth = 2 ) {
 
 function catch_get_cpt() {
   $types = array(
-    // 'service',
     'story',
     'team',
   );
 
   foreach ( $types as $type ) {
     if ( is_post_type_archive( $type ) || is_singular( $type ) ) {
+      return $type;
+    }
+  }
+
+  $taxonomies = array(
+    'team_type' => 'team',
+  );
+
+  foreach ( $taxonomies as $tax => $type ) {
+    if ( is_tax( $tax ) ) {
       return $type;
     }
   }
@@ -117,6 +126,16 @@ function catch_menu_item_classes( $classes, $item, $args ) {
         }
       } else {
 		    $classes[] = 'current-menu-item';
+      }
+    }
+
+    // Custom team pages
+    if ( $item->type == 'taxonomy' && $cpt == 'team' && is_single() ) {
+      $term = get_term( $item->object_id, 'team_type' );
+      $post_id = get_the_ID();
+
+      if ( ! is_wp_error( $term ) && has_term( $item->object_id, 'team_type', $post_id ) ) {
+        $classes[] = 'current-menu-item';
       }
     }
 
@@ -255,7 +274,7 @@ function catch_trim_length( $string = '', $length ) {
     }
     $x++;
   }
-  while ( $x < strlen( $string ) && ! in_array( substr( $string,$x,1 ),array( ' ', '!', '.', ',', '<', '&' ) ) ) {
+  while ( $x < strlen( $string ) && ! in_array( substr( $string,$x,1 ), array( ' ', '!', '.', ',', '<', '&' ) ) ) {
     $ns .= substr( $string,$x,1 );
     $x++;
   }
@@ -268,3 +287,39 @@ function catch_trim_length( $string = '', $length ) {
   }
   return $ns;
 }
+
+
+
+function catch_bcn_after_fill( $trail ) {
+  $index = null;
+
+  foreach ( $trail->breadcrumbs as $i => &$bc ) {
+    if ( in_array( 'team-root', $bc->get_types() ) ) {
+      $index = $i;
+      break;
+    }
+  }
+
+  if ( ! empty( $index ) ) {
+    $cpt = catch_get_cpt();
+
+    // Custom team pages
+    if ( $cpt == 'team' ) {
+      if ( is_single() ) {
+        $post_id = get_the_ID();
+        $terms = get_the_terms( $post_id, 'team_type' );
+
+        if ( ! empty( $terms ) ) {
+          $term = $terms[0];
+        }
+
+        if ( ! empty( $term ) && ! is_wp_error( $term ) ) {
+          $trail->breadcrumbs[ $index ] = new bcn_breadcrumb( $term->name, '', array(), get_term_link( $term ) );
+        }
+      } else if ( is_tax( 'team_type' ) ) {
+        array_splice( $trail->breadcrumbs, $index, 1 );
+      }
+    }
+  }
+}
+add_action( 'bcn_after_fill', 'catch_bcn_after_fill', 10, 1 );

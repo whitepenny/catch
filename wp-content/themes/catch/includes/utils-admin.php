@@ -48,6 +48,15 @@ function catch_admin_head() {
     }
   </style>
   <?php
+
+  // Team Types
+  ?>
+  <style type="text/css">
+    #team_typediv.postbox {
+      display: none !important;
+    }
+  </style>
+  <?php
 }
 add_action( 'admin_head', 'catch_admin_head' );
 
