@@ -12,7 +12,7 @@
     "gulp-filter": "^5.0.1",
     "gulp-include": "^2.3.1",
     "gulp-jshint": "^2.0.4",
-    "gulp-less": "^3.3.2",
+    "gulp-less": "^3.5.0",
     "gulp-livereload": "^3.8.1",
     "gulp-modernizr": "^1.0.0-alpha",
     "gulp-plumber": "^1.1.0",
