@@ -9,7 +9,7 @@ $post_image = get_field( 'post_image' );
   <?php endif; ?>
   <div class="post_item_container">
     <span class="post_date post_item_date">
-      <span><?php the_time( 'n.j.y' ); ?></span>
+      <span>Posted On <?php the_time( 'n.j.y' ); ?></span>
     </span>
     <h2 class="post_item_title">
       <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

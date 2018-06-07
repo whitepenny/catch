@@ -15,7 +15,7 @@ if ( have_posts() ) :
       <div class="fs-row">
         <div class="fs-cell fs-lg-3">
           <span class="post_date">
-            <span><?php the_date( 'n.j.y' ); ?></span>
+            <span>Posted On <?php the_date( 'n.j.y' ); ?></span>
           </span>
           <div class="post_social addthis_toolbox">
             <a class="post_social_link addthis_button_facebook">
