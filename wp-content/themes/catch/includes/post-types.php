@@ -17,12 +17,16 @@ function catch_register_post_types() {
   $team_root_id = $bcn_options['apost_team_root'];
   $team_slug = trim( str_ireplace( $home_url, '', get_permalink( $team_root_id ) ), '/' );
 
+  $event_root_id = $bcn_options['apost_event_root'];
+  $event_slug = trim( str_ireplace( $home_url, '', get_permalink( $event_root_id ) ), '/' );
+
   $slugs = array(
     'story' => $story_slug,
     'team' => $team_slug,
-
+    'event' => $event_slug,
     'story_id' => $story_root_id,
     'team_id' => $team_root_id,
+    'event_id' => $event_root_id,
   );
 
   // Stories
@@ -101,6 +105,38 @@ function catch_register_post_types() {
     'query_var'           => true,
   ) );
 
+
+  //Event 
+
+  register_post_type( 'event', array(
+    'labels'              => array(
+      'name'              => 'Events',
+      'singular_name'     => 'Event',
+      'add_new_item'      => 'Add New Event',
+      'edit_item'         => 'Edit Event',
+    ),
+    'description'         => '',
+    'menu_icon'           => 'dashicons-tickets-alt',
+    'public'              => true,
+    'show_ui'             => true,
+    'has_archive'         => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => false,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'post',
+    'capabilities'        => array(),
+    'supports'            => array( 'title', 'editor', 'revisions' ),
+    'map_meta_cap'        => true,
+    'map_meta_cap'        => true,
+    'hierarchical'        => false,
+    'rewrite'             => array(
+      'slug'              => $slugs['event'],
+      'with_front'        => false,
+    ),
+    'query_var'           => true,
+  ) );
+
   register_taxonomy_for_object_type( 'team_type', 'team' );
 
   // Callouts
@@ -133,7 +169,8 @@ function catch_register_post_types() {
   $old_slugs = get_option( 'catch_post_type_slugs' );
   if ( empty( $old_slugs ) || (
     $slugs['story'] != $old_slugs['story'] ||
-    $slugs['team'] != $old_slugs['team']
+    $slugs['team'] != $old_slugs['team'] ||
+    $slugs['event'] != $old_slugs['event']
   ) ) {
     flush_rewrite_rules();
     update_option( 'catch_post_type_slugs', $slugs );
