@@ -30,6 +30,14 @@ document.createElement( "picture" );
       $homeSlider.trigger(direction + '.owl.carousel');
     });
 
+    $('.page_header-slider').owlCarousel({
+      items: 1,
+      animateOut: 'fadeOut',
+      autoplay: true,
+      loop: true,
+      mouseDrag: false,
+    });
+
     $(".js-background").background();
     $(".js-checkpoint, [data-checkpoint-animation]").checkpoint({
       offset: 200,

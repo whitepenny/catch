@@ -76,6 +76,7 @@ function catch_get_cpt() {
   $types = array(
     'story',
     'team',
+    'event',
   );
 
   foreach ( $types as $type ) {
