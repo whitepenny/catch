@@ -8,9 +8,7 @@ require_once 'includes/utils-images.php';
 
 // Hide ACF on production
 
-if ( ! CATCH_DEV ) {
-  add_filter( 'acf/settings/show_admin', '__return_false' );
-}
+
 
 // Init
 
